@@ -1,0 +1,61 @@
+{
+  "author": {
+    "name": "William Candillon",
+    "email": "w@28.io",
+    "url": "http://28.io"
+  },
+  "name": "28.io-nodejs",
+  "description": "Node.js bindings for the 28.io API",
+  "version": "0.0.1",
+  "keywords": [
+    "jsoniq",
+    "xquery",
+    "dev",
+    "cloud"
+  ],
+  "homepage": "https://28.io",
+  "bugs": "https://github.com/28msec/28.io-nodejs/issues",
+  "repository": {
+    "url": "https://github.com/28msec/28.io-nodejs"
+  },
+  "main": "./lib/28.js",
+  "dependencies": {
+    "commander": "~2.2.0",
+    "q": "~1.0.0",
+    "final-fs": "~1.6.0",
+    "colors": "~0.6.2"
+  },
+  "devDependencies": {
+    "request": "~2.33.0",
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.9.2",
+    "matchdep": "~0.3.0",
+    "vows": "~0.7.0",
+    "grunt-vows": "~0.4.0",
+    "time-grunt": "~0.1.1"
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.1.0"
+  },
+  "contributors": [
+    {
+      "name": "William Candillon",
+      "email": "w@28.io"
+    }
+  ],
+  "scripts": {
+    "test": "grunt"
+  },
+  "directories": {
+    "test": "./test",
+    "bin": "./bin"
+  },
+  "licenses": [
+    {
+      "type": "Apache 2",
+      "url": "https://github.com/28msec/28.io-nodejs/blob/master/LICENSE"
+    }
+  ]
+}
