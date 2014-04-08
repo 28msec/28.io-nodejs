@@ -1,30 +1,46 @@
 'use strict';
 
 module.exports = function(grunt) {
+    
+    var params = function(){
+        
+    };
+
+    var addMethod = function(source, op){
+        return 'this.' + op.nickname + ' = function(' + params() + '){\n' +
+        
+        '};';
+    };
+
+    var clazz = function(source, className){
+        return 'module.exports.' + className + ' = function(domain){\n"use strict";\nvar request = require("request");' + source + '\n};';
+    };
+    
+    var toJS = function(className, swagger){
+        var source = '';
+        var apis = swagger.apis;
+        apis.forEach(function(api){
+            var operations = api.operations;
+            operations.forEach(function(operation){
+                addMethod(source, operation);
+            });
+        });
+        clazz(source, className);
+        return source;
+    };
+
     grunt.registerMultiTask('swagger', 'Generate Source from Swagger files', function(){
         var fs = require('fs');
-        var request = require('request');
        
-        var done = this.async();
         var options = this.options();
         var dest = options.dest;
-     
-        var count = options.apis.length;
-        options.apis.forEach(function(api, index){
+
+        options.apis.forEach(function(api){
             var swagger = fs.readFileSync(api.swagger);
-            request({
-                uri: 'http://secxbrl-beta.xbrl.io/angular.jq',
-                qs: { module: api.module, service: api.service, 'new-module': api.newModule },
-                headers: { 'Content-Type': 'text/json; utf-8' },
-                body: swagger
-            }, function(error, response, body){
-                fs.writeFileSync(dest + api.service + '.js', body);
-                grunt.log.writeln(api.service);
-                count--;
-                if(count === 0) {
-                    done();
-                }
-            });
+            var js = toJS(options.className, swagger);
+            console.log(js);
+            fs.writeFileSync(dest + api.module + '.js', js);
+            grunt.log.writeln(dest + api.module + '.js written');
         });
     });
 };
