@@ -27,15 +27,38 @@ module.exports = function (grunt) {
                         className: 'Modules'
                     },
                     {
+                        swagger: 'swagger/_datasources',
+                        fileName: 'datasources.api.28.io.js',
+                        className: 'Datasources'
+                    },
+                    {
                         swagger: 'swagger/project',
                         fileName: 'project.api.28.io.js',
                         className: 'Project'
                     }
                 ],
-                dest: 'src'
+                dest: 'lib'
             },
             dist: {
 
+            }
+        },
+        vows: {
+            all: {
+                options: {
+                    verbose: true,
+                    colors: true,
+                    coverage: 'json'
+                },
+                // String or array of strings
+                // determining which files to include.
+                // This option is grunt's "full" file format.
+                src: ['test/*', 'spec/*']
+            }
+        },
+        jsonlint: {
+            all: {
+                src: ['package.json', '.jshintrc']
             }
         }
     });
@@ -44,5 +67,5 @@ module.exports = function (grunt) {
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
     // Default task.
-    grunt.registerTask('default', ['jshint', 'swagger-js-codegen']);
+    grunt.registerTask('default', ['jsonlint', 'jshint', 'swagger-js-codegen', 'vows']);
 };
