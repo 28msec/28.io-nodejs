@@ -8,7 +8,7 @@ var events = require('events');
 
 var $28 = require('../lib/api.28.io').$28;
 
-vows.describe('Test Generated API').addBatch({
+vows.describe('Test OAuth API').addBatch({
     'Test $28 instanciation': function(){
             var api = new $28('http://portal.28.io/api');
             assert.equal(api.Auth.authenticate !== undefined, true);
