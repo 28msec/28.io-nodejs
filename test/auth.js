@@ -2,16 +2,16 @@
 
 var vows = require('vows');
 var assert = require('assert');
-var fs = require('fs');
-var ffs = require('final-fs');
+//var fs = require('fs');
+//var ffs = require('final-fs');
 var events = require('events');
 
 var $28 = require('../lib/api.28.io').$28;
 
 vows.describe('Test OAuth API').addBatch({
     'Test $28 instanciation': function(){
-            var api = new $28('http://portal.28.io/api');
-            assert.equal(api.Auth.authenticate !== undefined, true);
+        var api = new $28('http://portal.28.io/api');
+        assert.equal(api.Auth.authenticate !== undefined, true);
     },
     'Test Generated code for the 28.io Auth API': {
         topic: function(){
@@ -23,9 +23,9 @@ vows.describe('Test OAuth API').addBatch({
         },
         'Calling Authenticate method with missing parameters': {
             topic: function(auth){
-                var promise = new(events.EventEmitter);
+                var promise = new(events.EventEmitter)();
                 var callback = function(result){
-                    promise.emit('success', result);  
+                    promise.emit('success', result);
                 };
                 auth.authenticate({
                     email: 'w+test@28.io'
@@ -38,9 +38,9 @@ vows.describe('Test OAuth API').addBatch({
         },
         'Calling Authenticate method with wrong password': {
             topic: function(auth){
-                var promise = new(events.EventEmitter);
+                var promise = new(events.EventEmitter)();
                 var callback = function(result){
-                    promise.emit('success', result);  
+                    promise.emit('success', result);
                 };
                 auth.authenticate({
                     email: 'w+test@28.io',
@@ -58,15 +58,15 @@ vows.describe('Test OAuth API').addBatch({
         },
         'Calling Authenticate method with correct password': {
             topic: function(auth){
-                var promise = new(events.EventEmitter);
+                var promise = new(events.EventEmitter)();
                 auth.authenticate({
                     email: 'w+test@28.io',
                     password: 'foobar',
                     grant_type: 'client_credentials'
                 }).then(function(result){
-                    promise.emit('success', result);  
+                    promise.emit('success', result);
                 }, function(result){
-                    promise.emit('error', result);  
+                    promise.emit('error', result);
                 });
                 return promise;
             },
