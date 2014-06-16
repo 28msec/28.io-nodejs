@@ -33,7 +33,7 @@
     "vows": "~0.7.0",
     "grunt-vows": "~0.4.0",
     "time-grunt": "~0.1.1",
-    "grunt-swagger-js-codegen": "0.0.4",
+    "grunt-swagger-js-codegen": "0.0.5",
     "grunt-jsonlint": "~1.0.4"
   },
   "optionalDependencies": {},
