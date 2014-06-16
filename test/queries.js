@@ -30,11 +30,10 @@ vows.describe('Test Queries API').addBatch({
             },
             'Should have valid password': {
                 topic: function(success){
-                    return JSON.parse(success.body);
+                    return success.body;
                 },
                 'listQueries': {
                     topic: function(tokens){
-                        //var response = JSON.parse(success.body);
                         var Queries = api.Queries('apitests');
                         var token = tokens.project_tokens.project_apitests;
                         var promise = new(events.EventEmitter)();
@@ -49,8 +48,7 @@ vows.describe('Test Queries API').addBatch({
                         return promise;
                     },
                     'Has a query list': function(result){
-                        var queries = JSON.parse(result.body);
-                        assert.equal(queries.public instanceof Array, true);
+                        assert.equal(result.body.public instanceof Array, true);
                     }
                 }
             }
