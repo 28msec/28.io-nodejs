@@ -2,8 +2,7 @@
 
 [![Build Status](http://img.shields.io/travis/28msec/28.io-nodejs/master.svg?style=flat)](https://travis-ci.org/28msec/28.io-nodejs) [![NPM version](http://img.shields.io/npm/v/28.io-nodejs.svg?style=flat)](http://badge.fury.io/js/28.io-nodejs) [![Code Climate](http://img.shields.io/codeclimate/github/28msec/28.io-nodejs.svg?style=flat)](https://codeclimate.com/github/28msec/28.io-nodejs)
 
-28.io-angularjs is an officially supported nodejs binding
-for [28.io](http://28.io).
+28.io-nodejs is an officially supported nodejs binding for [28.io](http://28.io).
 28.io is a query processing platform that allows you to write complex queries accross multiple data sources - relational databases; document stores, data warehouses and even web services.
 
 We also have [tutorials](http://www.28.io/blog/tags/tutorial) and an
