@@ -6,10 +6,11 @@ before_script:
 - npm install -g grunt-cli
 deploy:
   provider: npm
+  skip_cleanup: true
   email: w@28.io
   api_key:
-    secure: g+DjrtGRz4W7bvcCrJT3Oa80SFF/9TL+zP0rmTq36ANHNz0EyPV8epanL26RmQj+QA5XnHqzK1kFjFURrVncLJZdHXIdOSalaB5k8yRgpLEMETQvmTUfe6rWNTaEndKTjrUyWhHqceK4QlSrcv3VIq8loObimqaH7J1K3fZ7XgQ=
+    secure: AXx3YWUNkqZXf+A87JX8m/+4UnrTWqP9YwIgg4hsOTDOTSnODfaO9VHhlzSeBVBsw93YYz0+CZxfLhMFKjm8Zx1fX6MtlprK8+vJIC3JUIwU8dPqau/54isR/Wx1D/fV8s1wBzndihFFvQLiBvYEMhGZC8i44IWVh/YgOVb8g7g=
   on:
-    branch: master
     repo: 28msec/28.io-nodejs
-    node: 0.11
+    branch: master
+    node: '0.11'
