@@ -2,3 +2,8 @@ node_modules
 .DS_Store
 *.swp
 *.swo
+lib/auth.api.28.io.js
+lib/datasources.api.28.io.js
+lib/modules.api.28.io.js
+lib/project.api.28.io.js
+lib/queries.api.28.io.js
