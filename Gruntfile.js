@@ -12,27 +12,27 @@ module.exports = function (grunt) {
             options: {
                 apis: [
                     {
-                        swagger: 'swagger/_queries',
+                        swagger: 'swagger/_queries.json',
                         fileName: 'queries.api.28.io.js',
                         className: 'Queries'
                     },
                     {
-                        swagger: 'swagger/auth',
+                        swagger: 'swagger/auth.json',
                         fileName: 'auth.api.28.io.js',
                         className: 'Auth'
                     },
                     {
-                        swagger: 'swagger/_modules',
+                        swagger: 'swagger/_modules.json',
                         fileName: 'modules.api.28.io.js',
                         className: 'Modules'
                     },
                     {
-                        swagger: 'swagger/_datasources',
+                        swagger: 'swagger/_datasources.json',
                         fileName: 'datasources.api.28.io.js',
                         className: 'Datasources'
                     },
                     {
-                        swagger: 'swagger/project',
+                        swagger: 'swagger/project.json',
                         fileName: 'project.api.28.io.js',
                         className: 'Project'
                     }
@@ -58,7 +58,7 @@ module.exports = function (grunt) {
         },
         jsonlint: {
             all: {
-                src: ['package.json', '.jshintrc']
+                src: ['package.json', 'swagger/*.json', '.jshintrc']
             }
         }
     });
