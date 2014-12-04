@@ -12,6 +12,11 @@ module.exports = function (grunt) {
             options: {
                 apis: [
                     {
+                        swagger: 'swagger/_batch.json',
+                        fileName: 'batch.api.28.io.js',
+                        className: 'Batch'
+                    },
+                    {
                         swagger: 'swagger/_queries.json',
                         fileName: 'queries.api.28.io.js',
                         className: 'Queries'
