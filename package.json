@@ -6,7 +6,7 @@
   },
   "name": "28.io-nodejs",
   "description": "Node.js bindings for the 28.io API",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "keywords": [
     "jsoniq",
     "xquery",
@@ -33,7 +33,7 @@
     "vows": "~0.7.0",
     "grunt-vows": "~0.4.0",
     "time-grunt": "~0.1.1",
-    "grunt-swagger-js-codegen": "0.2.16",
+    "grunt-swagger-js-codegen": "0.2.17",
     "grunt-jsonlint": "~1.0.4"
   },
   "optionalDependencies": {},
