@@ -40,6 +40,11 @@ module.exports = function (grunt) {
                         swagger: 'swagger/project.json',
                         fileName: 'project.api.28.io.js',
                         className: 'Project'
+                    },
+                    {
+                        swagger: 'swagger/account.json',
+                        fileName: 'account.api.28.io.js',
+                        className: 'Account'
                     }
                 ],
                 dest: 'lib'
