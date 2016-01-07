@@ -6,7 +6,7 @@
   },
   "name": "28.io-nodejs",
   "description": "Node.js bindings for the 28.io API",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "keywords": [
     "jsoniq",
     "xquery",
