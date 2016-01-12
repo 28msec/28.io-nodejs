@@ -34,7 +34,7 @@ vows.describe('Test Queries API').addBatch({
                 },
                 'listQueries': {
                     topic: function(tokens){
-                        var Queries = api.Queries('apitests');
+                        var Queries = api.Queries('http://apitests.28.io/v1');
                         var token = tokens.project_tokens.project_apitests;
                         var promise = new(events.EventEmitter)();
                         Queries.listQueries({
